@@ -6,12 +6,14 @@ class ApplicationController < Sinatra::Base
     meals.to_json
   end 
 
-
+  
   
 
   delete '/meals/:id' do
     meal = Meal.find(params[:id])
-   
+    meal.destory
+    meal.to_json
+  end 
   
 
 
