@@ -17,11 +17,3 @@ Meal.create(name: "hawaiian Pizza", calories: 250, main_ingredient: "pineapple",
 
 
 puts "✅ Done seeding!"
-
-reate_table :restaurants do |t|
-  t.string :name
-  t.string :slogan
-
-  t.timestamps
-
-end
