@@ -1,3 +1,3 @@
 class Meal < ActiveRecord::Base
-  belongs_to :restaruant
+  belongs_to :restaurant
 end
