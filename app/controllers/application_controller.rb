@@ -8,11 +8,12 @@ class ApplicationController < Sinatra::Base
 
   delete '/meals/:id' do
     meal = Meal.find(params[:id])
-    meal.destory
+    meal.destroy
     meal.to_json
   end 
   
   post '/meals' do
+    binding.pry
     restaurant = Restaurant.find_or_create_by(name: params[:restaurant])
     Meal.create( restaurant: restaurant) 
   end 
