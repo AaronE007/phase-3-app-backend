@@ -28,4 +28,9 @@ class ApplicationController < Sinatra::Base
   message.update( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"])
  end
 
+  get '/restaurants' do 
+    restaurants = Restaurant.all
+    restaurants.to_json
+  end
+
 end
