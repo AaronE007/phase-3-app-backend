@@ -13,9 +13,8 @@ class ApplicationController < Sinatra::Base
   end 
   
   post '/meals' do
-    binding.pry
-    restaurant = Restaurant.find_or_create_by(name: params[:restaurant])
-    Meal.create( restaurant: restaurant) 
+    restaurant = Restaurant.find_or_create_by(name: params["restaurant"])
+    Meal.create( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"]) 
   end 
 
   get '/restaurants' do 
@@ -23,7 +22,10 @@ class ApplicationController < Sinatra::Base
     restaurants.to_json
   end
 
-
- 
+ patch '/meals/:id' do
+  meal = Meal.find(params[:id])
+  restaurant = Restaurant.find_or_create_by(name: params["restaurant"])
+  message.update( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"])
+ end
 
 end
