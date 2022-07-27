@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
 
   post '/restaurants' do
     restaurant = Restaurant.create(name: params["name"], slogan: params["slogan"])
-  
+    restaurant.to_json
   end
 
 end
