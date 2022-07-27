@@ -35,4 +35,6 @@ class ApplicationController < Sinatra::Base
     restaurant.to_json
   end
 
+  private
+
 end
