@@ -14,18 +14,15 @@ class ApplicationController < Sinatra::Base
   
   post '/meals' do
     restaurant = Restaurant.find_or_create_by(name: params["restaurant"])
-    Meal.create( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"]) 
+    meal = Meal.create( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"]) 
+    meal.to_json
   end 
-
-  get '/restaurants' do 
-    restaurants = Restaurant.all
-    restaurants.to_json
-  end
 
  patch '/meals/:id' do
   meal = Meal.find(params[:id])
   restaurant = Restaurant.find_or_create_by(name: params["restaurant"])
-  message.update( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"])
+  meal.update( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"])
+  meal.to_json
  end
 
   get '/restaurants' do 
