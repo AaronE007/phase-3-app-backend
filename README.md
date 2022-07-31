@@ -1,124 +1,52 @@
-# Phase 3 Project Guidelines
+# Restaurant Diary: Back End
 
-## Learning Goals
+# Walk-Through-Video
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+(https://www.youtube.com/watch?v=IVA9NzW21gs)
 
-## Introduction
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+# Description
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+This is a Sinatra based back-end for my Restaurant Diary application. This project is a way to keep track of all of your favorite restaurants and your favoirte food at those restaurants. You can keep a diary of the food you eat and list the restaurants those meals are associated with. You can also keep track of new restaurants on the restaurants page. 
 
-## Requirements
+Once a user wants to record meal, enter some data about the meal in a form. Here they can keep track of the meal's name, calories, main ingredient, the country the dish originated, and the restaurant the meal came from. The user can also delete the meal from the list. If the user would rather edit the meal they can flip the card the meal is on and edit the information about the meal on the front of the card. 
 
-For this project, you must:
+The user can view the restaurants that the meals are associated with on the restaurants page. If the user wants to add another restaurant to the card, they can add one under the restaurant form. Here they can input the name and the slogan of the restaurant. The restaurants cannot be deleted though. 
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
+I made this project because I love the culinary arts. My favorite aspect of this application is that I can keep track of all of my favorite meals and never forget the restaurants I had them in. It should make deciding where to eat out at much easier.  
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+In order to get the full application running you must connect this to my My-App-Frontend repository. 
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+## Installation
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+1. Fork and clone this repo
+2. CD into this from project and then in order to insall necessary gems run:
 
-## Getting Started
+```bash
+bundle install 
+```
+3. Then run the command below to start the server:
 
-### Backend Setup
+```bash
+bundle exec rake server
+```
+4. Then follow the directions in the My-App-Frontend in order to start the front end of the application. 
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
 
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
+## Configuration
+Dependencies and all configuration is done in environment.rb. Your database is also set up here. DataMapper will use sqlite3 by default. By default the application uses the sqlite3-memory adapter (no configuration needed).
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+## Test Methods and Params found in the Controllers folder with 
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
-
-You can start your server with:
-
-```console
-$ bundle exec rake server
+```bash
+bundle exec Rake Console
 ```
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
 
-### Frontend Setup
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Your backend and your frontend should be in **two different repositories**.
+Please make sure to update tests as appropriate.
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
-```
-
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
-
-### Fetch Example
-
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
-
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
-
-## Resources
-
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
