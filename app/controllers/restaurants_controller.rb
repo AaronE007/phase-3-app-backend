@@ -1,7 +1,4 @@
-class ApplicationController < Sinatra::Base
-  set :default_content_type, 'application/json'
-  
- 
+class RestaurantsController < ApplicationController
 
   get '/restaurants' do 
     restaurants = Restaurant.all
@@ -13,5 +10,4 @@ class ApplicationController < Sinatra::Base
     restaurant.to_json
   end
 
-
-end
+end 
