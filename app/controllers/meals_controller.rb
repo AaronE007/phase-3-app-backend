@@ -6,7 +6,7 @@ class MealsController < ApplicationController
   end 
 
   delete '/meals/:id' do
-    meal = Meal.find(params[:id])
+    meal = Meal.find_by(params[:id])
     meal.destroy
     meal.to_json
   end 
@@ -18,7 +18,7 @@ class MealsController < ApplicationController
   end 
 
  patch '/meals/:id' do
-  meal = Meal.find(params[:id])
+  meal = Meal.find_by(params[:id])
   restaurant = Restaurant.find_or_create_by(name: params["restaurant"])
   meal.update( restaurant: restaurant, name: params["name"], calories: params["calories"], main_ingredient: params["main_ingredient"], country_of_origin: params["country_of_origin"])
   meal.to_json

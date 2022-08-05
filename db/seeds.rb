@@ -12,7 +12,7 @@ Meal.create(name: "Beef Sub", calories: 900, main_ingredient: "beef", country_of
 Meal.create(name: "Turkey Sub", calories: 300, main_ingredient: "turkey", country_of_origin: "America", restaurant: underway)
 
 Meal.create(name: "Broccli Pizza", calories: 100, main_ingredient: "broccli", country_of_origin: "Italy", restaurant: papajames)
-Meal.create(name: "hawaiian Pizza", calories: 250, main_ingredient: "pineapple", country_of_origin: "Sweden", restaurant: papajames)
+Meal.create(name: "Hawaiian Pizza", calories: 250, main_ingredient: "pineapple", country_of_origin: "Sweden", restaurant: papajames)
 
 
 
