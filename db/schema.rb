@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_07_24_003353) do
     t.string "name"
     t.integer "calories"
     t.string "main_ingredient"
-    t.string "country_of_origin"
+    t.string "country_of_origin"/
     t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

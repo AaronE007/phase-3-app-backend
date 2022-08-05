@@ -25,12 +25,24 @@ In order to get the full application running you must connect this to my My-App-
 ```bash
 bundle install 
 ```
-3. Then run the command below to start the server:
+3. Make sure the migrations for the data base are running with:
+
+```bash
+bundle exec rake db:migrate
+```
+4. Seed data to the Server if you choose with:
+
+```bash
+bundle exec rake db:seed
+```
+
+5. Then run the command below to start the server:
 
 ```bash
 bundle exec rake server
 ```
-4. Then follow the directions in the My-App-Frontend in order to start the front end of the application. 
+
+6. Then follow the directions in the My-App-Frontend in order to start the front end of the application. 
 
 
 ## Configuration
